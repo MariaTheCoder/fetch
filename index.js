@@ -33,3 +33,22 @@ function createUser(url) {
     .then((json) => console.log(json));
 }
 createUser("https://jsonplaceholder.typicode.com/users");
+
+/**
+ * Update an existing user
+ */
+function updateUser(url) {
+  fetch(url, {
+    method: "PUT",
+    body: JSON.stringify({
+      name: "Something else",
+      username: "Something else",
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}
+updateUser("https://jsonplaceholder.typicode.com/users/1");

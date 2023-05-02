@@ -73,3 +73,14 @@ function filterByUserId(url) {
 }
 filterByUserId("https://jsonplaceholder.typicode.com/posts?userId=1");
 filterByUserId("https://jsonplaceholder.typicode.com/albums?userId=3");
+
+/**
+ * Listing nested resources
+ */
+function listing(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}
+listing("https://jsonplaceholder.typicode.com/users/8/todos");
+listing("https://jsonplaceholder.typicode.com/albums/1");

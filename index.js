@@ -66,9 +66,10 @@ deleteUser("https://jsonplaceholder.typicode.com/users/2");
 /**
  * Filtering
  */
-function filterCommentsByUserId(category, userId) {
-  fetch(`https://jsonplaceholder.typicode.com/${category}?userId=${userId}`)
+function filterByUserId(url) {
+  fetch(url)
     .then((response) => response.json())
     .then((json) => console.log(json));
 }
-filterCommentsByUserId("posts", 2);
+filterByUserId("https://jsonplaceholder.typicode.com/posts?userId=1");
+filterByUserId("https://jsonplaceholder.typicode.com/albums?userId=3");

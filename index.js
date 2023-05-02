@@ -52,3 +52,13 @@ function updateUser(url) {
     .then((json) => console.log(json));
 }
 updateUser("https://jsonplaceholder.typicode.com/users/1");
+
+/**
+ * Delete a user
+ */
+function deleteUser(url) {
+  fetch(url, {
+    method: "DELETE",
+  });
+}
+deleteUser("https://jsonplaceholder.typicode.com/users/2");

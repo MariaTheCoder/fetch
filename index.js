@@ -62,3 +62,13 @@ function deleteUser(url) {
   });
 }
 deleteUser("https://jsonplaceholder.typicode.com/users/2");
+
+/**
+ * Filtering
+ */
+function filterCommentsByUserId(category, userId) {
+  fetch(`https://jsonplaceholder.typicode.com/${category}?userId=${userId}`)
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}
+filterCommentsByUserId("posts", 2);
